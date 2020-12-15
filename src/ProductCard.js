@@ -30,7 +30,7 @@ function ProductCard({ id, item, details=false}) {
             <button className="remove-button btn-primary rounded" onClick={remove}>Remove from cart</button>
         </div>
         </Link>
-        {item.qty ? <QuantityAdjuster id={id} /> : null}
+            {item.qty ? <div className="form-group row"><div className="col"></div><div className="col-xs-2"><QuantityAdjuster id={id} /></div><div className="col"></div></div> : null}
         </>
     )
 }

@@ -24,8 +24,8 @@ function QuantityAdjuster({ id }) {
 
     return (
         <>
-          <label htmlFor="productQuantity">QTY: </label>
-          <input type="number" value={cart[id].qty} name="productQuantity" id="productQuantity" onChange={handleChange}></input>
+          <label htmlFor="productQuantity" className="form-label">QTY: </label>
+          <input type="number" value={cart[id].qty} name="productQuantity" id="productQuantity" onChange={handleChange} className="form-control input-sm"></input>
         </>
     )
 }

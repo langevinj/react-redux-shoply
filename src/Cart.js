@@ -44,10 +44,10 @@ function Cart() {
                 <div className="col"></div>
                 <div className="col">
                     <form onSubmit={handleSubmit}>
-                        <label htmlFor="discount-field">Enter a discount code:</label>
-                        <input type="text" name="discount-field" value={formCode} id="discount-field" onChange={handleChange}></input>
+                        <label htmlFor="discount-field" className="form-label">Enter a discount code:</label>
+                        <input type="text" name="discount-field" value={formCode} id="discount-field" onChange={handleChange} className="form-control"></input>
                         {error ? <p className="text-danger">Invalid discount code.</p> : null}
-                        <button>Submit</button>
+                        <button className="btn-primary rounded">Submit</button>
                     </form>
                 </div>
                 <div className="col"></div>

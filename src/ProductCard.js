@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { addToCart, removeFromCart } from './actions';
 import { Link } from 'react-router-dom'
+import QuantityAdjuster from './QuantityAdjuster'
 import './ProductCard.css'
 
 function ProductCard({ id, item, details=false}) {
@@ -29,6 +30,7 @@ function ProductCard({ id, item, details=false}) {
             <button className="remove-button btn-primary rounded" onClick={remove}>Remove from cart</button>
         </div>
         </Link>
+        {item.qty ? <QuantityAdjuster id={id} /> : null}
         </>
     )
 }

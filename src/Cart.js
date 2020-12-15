@@ -2,30 +2,13 @@ import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import ProductCard from './ProductCard'
+import calculateTotal from './helpers'
 
 function Cart() {
     const cart = useSelector(st => st.cart)
     const [discountCode, setDiscountCode] = useState("")
     const [formCode, setFormCode] = useState("")
     const [error, setError] = useState(false)
-
-    const calculateTotal = () => {
-        const prices = Object.entries(cart).map(item => item[1].price * item[1].qty)
-        if(!prices.length > 0){
-            return 0
-        }
-        const reducer = (acc, currVal) => acc + currVal;
-        let cartTotal = prices.reduce(reducer)
-        if(discountCode === "REMOVE10"){
-            return (cartTotal * 0.90).toFixed(2)
-        } else if (discountCode === "REMOVE20"){
-            return (cartTotal * 0.80).toFixed(2)
-        } else if (discountCode === "REMOVE30") {
-            return (cartTotal * 0.70).toFixed(2)
-        } else {
-            return cartTotal.toFixed(2)
-        }
-    }
 
     const handleChange = (evt) => {
         setFormCode(evt.target.value)
@@ -71,7 +54,7 @@ function Cart() {
             </div>
             <div className="row bg-white">
                 <div className="col"></div>
-                <div className="col"><h2>Total: {calculateTotal()}</h2></div>
+                <div className="col"><h2>Total: {calculateTotal(cart, discountCode)}</h2></div>
                 <div className="col"></div>
             </div>
         </div>

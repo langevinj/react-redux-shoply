@@ -9,9 +9,9 @@ function ProductCard({ id, item }) {
     console.log(item)
     return (
         <div id={id} className="ProductCard">
+            <p className="product-name">{item.name}</p>
             <img src={item.image_url} className="product-img" alt={item.name}></img>
-            <span className="product-name">{item.name}</span>
-            <span className="product-price">{item.price}</span>
+            <p className="product-price">${item.price}</p>
             <p className="product-description">{item.description}</p>
         </div>
     )

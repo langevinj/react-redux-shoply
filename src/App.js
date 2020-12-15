@@ -1,5 +1,4 @@
 import './App.css';
-import Products from './Products'
 import Routes from './Routes'
 
 function App() {

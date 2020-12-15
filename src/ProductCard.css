@@ -9,10 +9,6 @@
     font-size: 2rem;
 }
 
-.product-description {
-    color: gray;
-}
-
 .ProductCard {
     box-sizing: border-box;
     background-color: skyblue;
@@ -24,3 +20,16 @@
 button{
     margin: 0.5rem;
 }
+
+a:link {
+    text-decoration: none;
+}
+
+a {
+    color: black;
+}
+
+.ProductCard:hover {
+    background: rgb(24, 158, 211);
+}
+

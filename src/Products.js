@@ -7,10 +7,12 @@ function Products() {
 
     return (
         <ul>
-            {products ? products.map(product => <li><ProductCard item={product} /></li>) : null}
+            {products ? Object.entries(products).map(product => <li key={product[0]}><ProductCard id={product[0]} item={product[1]} /></li>) : null}
         </ul>
     )
 
 }
 
 export default Products;
+
+// (product => <li><ProductCard item={product} /></li>)

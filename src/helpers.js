@@ -1,4 +1,4 @@
-export default function calculateTotal(cart, discountCode = ""){
+export function calculateTotal(cart, discountCode = ""){
     const prices = Object.entries(cart).map(item => item[1].price * item[1].qty)
     if (!prices.length > 0) {
         return 0
@@ -14,4 +14,10 @@ export default function calculateTotal(cart, discountCode = ""){
     } else {
         return cartTotal.toFixed(2)
     }
+}
+
+export function totalItems(cart) {
+    let count = 0;
+    Object.entries(cart).forEach(item => count += item[1].qty)
+    return count
 }

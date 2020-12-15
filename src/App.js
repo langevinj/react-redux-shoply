@@ -1,12 +1,14 @@
 import './App.css';
 import Routes from './Routes'
+import Nav from './Nav'
 
 function App() {
   return (
     <div className="App">
+      <Nav />
       <Routes />
-    </div>
-  );
+   </div>
+ );
 }
 
 export default App;

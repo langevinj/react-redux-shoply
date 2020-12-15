@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import ProductCard from './ProductCard'
-import calculateTotal from './helpers'
+import { calculateTotal } from './helpers'
 
 function Cart() {
     const cart = useSelector(st => st.cart)
@@ -26,13 +26,13 @@ function Cart() {
     }
 
     return (
-        <div className="container-fluid">
-            <div className="row bg-white">
-                <div className="col"><Link to="/">Products</Link></div>
+        <div className="container-fluid bg-light">
+            <div className="row bg-light">
+                <div className="col"></div>
                 <div className="col"><h2>Your Cart:</h2></div>
                 <div className="col"></div>
             </div>
-            <div className="row bg-light">
+            <div className="row">
                 <div className="col"></div>
                 <div className="col">
                     <ul>
@@ -40,7 +40,7 @@ function Cart() {
                     </ul></div>
                 <div className="col"></div>
             </div>
-            <div className="row bg-white">
+            <div className="row">
                 <div className="col"></div>
                 <div className="col">
                     <form onSubmit={handleSubmit}>
@@ -52,7 +52,7 @@ function Cart() {
                 </div>
                 <div className="col"></div>
             </div>
-            <div className="row bg-white">
+            <div className="row">
                 <div className="col"></div>
                 <div className="col"><h2>Total: {calculateTotal(cart, discountCode)}</h2></div>
                 <div className="col"></div>

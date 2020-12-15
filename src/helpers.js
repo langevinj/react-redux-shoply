@@ -1,3 +1,7 @@
+function taxAmount(preTax, tax = 0.0725) {
+    return (preTax * tax)
+}
+
 export function calculateTotal(cart, discountCode = ""){
     const prices = Object.entries(cart).map(item => item[1].price * item[1].qty)
     if (!prices.length > 0) {
@@ -5,16 +9,21 @@ export function calculateTotal(cart, discountCode = ""){
     }
     const reducer = (acc, currVal) => acc + currVal;
     let cartTotal = prices.reduce(reducer)
+    let preTax;
     if (discountCode === "REMOVE10") {
-        return (cartTotal * 0.90).toFixed(2)
+        preTax = (cartTotal * 0.90)
     } else if (discountCode === "REMOVE20") {
-        return (cartTotal * 0.80).toFixed(2)
+        preTax = (cartTotal * 0.80)
     } else if (discountCode === "REMOVE30") {
-        return (cartTotal * 0.70).toFixed(2)
+        preTax = (cartTotal * 0.70)
     } else {
-        return cartTotal.toFixed(2)
+        preTax = cartTotal
     }
+    let tax = taxAmount(preTax)
+    return {total: (preTax + tax).toFixed(2), tax: tax.toFixed(2), preTax: preTax.toFixed(2)}
 }
+
+
 
 export function totalItems(cart) {
     let count = 0;

@@ -54,7 +54,13 @@ function Cart() {
             </div>
             <div className="row">
                 <div className="col"></div>
-                <div className="col"><h2>Total: {calculateTotal(cart, discountCode)}</h2></div>
+                <div className="col">
+                    <h5>Order: {calculateTotal(cart, discountCode).preTax}</h5>
+                    <h5>Tax:       
+                        +{calculateTotal(cart, discountCode).tax}
+                    </h5>
+                    <h2>Order Total: {calculateTotal(cart, discountCode).total}</h2>
+                </div>
                 <div className="col"></div>
             </div>
         </div>

@@ -16,7 +16,7 @@ function Nav() {
             <NavLink exact to="/cart">
                 {/* <span>Cart  {totalItems(cart)}</span> */}
                 <i className="fas fa-shopping-cart fa-2x"><span className="item-count">{totalItems(cart)}</span>
-                <span className="cart-total rounded p-1">{calculateTotal(cart)}</span></i>
+                <span className="cart-total rounded p-1">{calculateTotal(cart).total}</span></i>
                 
             </NavLink>
         </nav>

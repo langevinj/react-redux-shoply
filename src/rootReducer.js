@@ -22,6 +22,8 @@ function rootReducer(state = INITIAL_STATE, action) {
                     return { ...state, cart: { ...updatedCart}}
                 }
                 return { ...state, cart: { ...state.cart, [action.payload]: {...state.cart[action.payload], qty: state.cart[action.payload].qty - 1}}}
+            } else {
+                return state;
             }
 
             //could add an else here to throw error when item not in cart

@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 import ProductCard from './ProductCard'
 import './Products.css'
 
@@ -9,7 +10,7 @@ function Products() {
     return (
         <div className="container-fluid">
             <div className="row bg-white">
-                <div className="col"></div>
+                <div className="col"><Link to="/cart">Cart</Link></div>
                 <div className="col"><h2>The best deals guarantee!</h2></div>
                 <div className="col"></div>
             </div>
@@ -26,5 +27,3 @@ function Products() {
 }
 
 export default Products;
-
-// (product => <li><ProductCard item={product} /></li>)

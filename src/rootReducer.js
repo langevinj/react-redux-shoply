@@ -4,7 +4,7 @@ const json_inventory = require('./data.json')
 const INITIAL_STATE = { cart: {}, inventory: json_inventory.products }
 
 function rootReducer(state = INITIAL_STATE, action) {
-    console.log("reducer ran; state & action:", state, action);
+    // console.log("reducer ran; state & action:", state, action);
 
     switch(action.type) {
         case ADD:

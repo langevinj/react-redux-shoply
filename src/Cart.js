@@ -5,10 +5,13 @@ import ProductCard from './ProductCard'
 
 function Cart() {
     const cart = useSelector(st => st.cart)
+    console.log(cart)
 
     const calculateTotal = () => {
-        let sum = 0;
         const prices = Object.entries(cart).map(item => item[1].price * item[1].qty)
+        if(!prices.length > 0){
+            return 0
+        }
         const reducer = (acc, currVal) => acc + currVal;
         return prices.reduce(reducer).toFixed(2)
     }

@@ -1,13 +1,15 @@
 import { ADD, REMOVE } from './actionTypes'
 
-export function addToCart() {
+export function addToCart(id) {
     return {
-        type: ADD
+        type: ADD,
+        payload: id
     };
 }
 
-export function removeFromCart() {
+export function removeFromCart(id) {
     return {
-        type: REMOVE
+        type: REMOVE,
+        payload: id
     };
 }

@@ -8,7 +8,8 @@ function rootReducer(state = INITIAL_STATE, action) {
 
     switch(action.type) {
         case ADD:
-            return { ...state, cart: [...state.cart, action.payload]}
+            const item = json_inventory.products[action.payload]
+            return { ...state, cart: [...state.cart, item]}
         
         case REMOVE: 
             return { ...state, cart: state.cart.filter(item => item.id !== action.payload)}

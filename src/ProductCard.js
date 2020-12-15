@@ -14,9 +14,9 @@ function ProductCard({ id, item }) {
             <p className="product-name">{item.name}</p>
             <img src={item.image_url} className="product-img" alt={item.name}></img>
             <p className="product-price">${item.price}</p>
-            <p className="product-description">{item.description}</p>
-            <button className="add-button" onClick={add}>Add to cart</button>
-            <button className="remove-button" onClick={remove}>Remove from cart</button>
+            {/* <p className="product-description">{item.description}</p> */}
+            <button className="add-button btn-primary rounded" onClick={add}>Add to cart</button>
+            <button className="remove-button btn-primary rounded" onClick={remove}>Remove from cart</button>
         </div>
     )
 }

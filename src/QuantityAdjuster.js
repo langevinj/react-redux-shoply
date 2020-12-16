@@ -3,14 +3,14 @@ import { useSelector, useDispatch } from 'react-redux'
 import { addToCart, removeFromCart } from './actions';
 
 function QuantityAdjuster({ id=null }) {
-    if(!id){
+    const cart = useSelector(st => st.cart)
+    const dispatch = useDispatch();
+
+    if (!id) {
         return (
             <></>
         )
     }
-    
-    const cart = useSelector(st => st.cart)
-    const dispatch = useDispatch();
 
     //handle addition or removal of targetted quantity of an item from a cart
     const handleChange = (evt) => {

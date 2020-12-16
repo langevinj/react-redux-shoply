@@ -8,6 +8,7 @@ function QuantityAdjuster({ id=null }) {
             <></>
         )
     }
+    
     const cart = useSelector(st => st.cart)
     const dispatch = useDispatch();
 

@@ -10,6 +10,9 @@ function rootReducer(state = INITIAL_STATE, action) {
     switch(action.type) {
         case ADD:
             const item = json_inventory.products[action.payload]
+            if(!state.cart){
+                return { ...state, cart: { ...state.cart, [action.payload]: { qty: 1, ...item } } }
+            }
             if(state.cart[action.payload]){
                 return { ...state, cart: {...state.cart, [action.payload]: {qty: state.cart[action.payload].qty + 1, ...item}}}
             } else {

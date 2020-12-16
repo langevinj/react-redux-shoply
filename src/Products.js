@@ -8,10 +8,10 @@ function Products() {
     const products = useSelector(st => st.inventory)
 
     return (
-        <div className="bg-danger text-center products">
+        <div className="bg-light text-center products">
             <div className="row">
                 <div className="col"></div>
-                <div className="col"><h2>The best deals guarantee!</h2></div>
+                <div className="col"><h2 className="title">The best deals guaranteed!</h2></div>
                 <div className="col"></div>
             </div>
             <div className="row">

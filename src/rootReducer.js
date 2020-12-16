@@ -25,7 +25,9 @@ function rootReducer(state = INITIAL_STATE, action) {
             } else {
                 return state;
             }
-
+        
+        case "INITIALUPDATE":
+            return { ...state, cart: action.payload }
             //could add an else here to throw error when item not in cart
 
         default:

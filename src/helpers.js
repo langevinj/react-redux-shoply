@@ -3,6 +3,9 @@ function taxAmount(preTax, tax = 0.0725) {
 }
 
 export function calculateTotal(cart, discountCode = ""){
+    if (!cart) { 
+        return 0
+    }
     const prices = Object.entries(cart).map(item => item[1].price * item[1].qty)
     if (!prices.length > 0) {
         return 0
@@ -27,6 +30,9 @@ export function calculateTotal(cart, discountCode = ""){
 
 export function totalItems(cart) {
     let count = 0;
+    if(!cart){
+        return 0
+    }
     Object.entries(cart).forEach(item => count += item[1].qty)
     return count
 }

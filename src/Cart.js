@@ -1,8 +1,7 @@
 import React, { useState } from 'react' 
 import { useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
-import ProductCard from './ProductCard'
 import { calculateTotal } from './helpers'
+import ProductCard from './ProductCard'
 
 function Cart() {
     const cart = useSelector(st => st.cart)
@@ -14,6 +13,7 @@ function Cart() {
         setFormCode(evt.target.value)
     }
 
+    //handle submission of a discount code, return an error if not valid
     const handleSubmit = (evt) => {
         evt.preventDefault();
         if(!["REMOVE10", "REMOVE20", "REMOVE30"].includes(formCode)){

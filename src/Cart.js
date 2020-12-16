@@ -56,7 +56,7 @@ function Cart() {
             <div className="row">
                 <div className="col"></div>
                 <div className="col order-total">
-                    <table class="table table-striped">
+                    <table className="table table-striped">
                         <thead>
                             <tr>
                                 <th scope="col">Order:</th>

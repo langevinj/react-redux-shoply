@@ -1,4 +1,4 @@
-import { ADD, REMOVE } from './actionTypes'
+import { ADD, REMOVE, INITIALUPDATE } from './actionTypes'
 const json_inventory = require('./data.json')
 
 const INITIAL_STATE = { cart: {}, inventory: json_inventory.products }
@@ -26,7 +26,7 @@ function rootReducer(state = INITIAL_STATE, action) {
                 return state;
             }
         
-        case "INITIALUPDATE":
+        case INITIALUPDATE:
             return { ...state, cart: action.payload }
             //could add an else here to throw error when item not in cart
 

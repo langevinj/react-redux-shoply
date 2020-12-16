@@ -1,4 +1,4 @@
-import { ADD, REMOVE } from './actionTypes'
+import { ADD, REMOVE, INITIALUPDATE } from './actionTypes'
 
 export function addToCart(id) {
     return {
@@ -12,4 +12,11 @@ export function removeFromCart(id) {
         type: REMOVE,
         payload: id
     };
+}
+
+export function updateInitialCart(cart) {
+    return {
+        type: INITIALUPDATE,
+        payload: cart
+    }
 }

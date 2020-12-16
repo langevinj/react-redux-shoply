@@ -1,12 +1,12 @@
 .product-img {
     width: auto;
-    height: 12rem;
+    height: 20vh;
 }
 
 .product-name {
     text-transform: capitalize;
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 3vh;
 }
 
 .ProductCard {
@@ -15,11 +15,13 @@
     padding: 0.5rem;
     margin: 2rem;
     border-radius: 10px;
-    min-width: 25rem;
+    min-width: 25vh;
 }
 
 button{
     margin: 0.5rem;
+    min-width: 6vh;
+    font-size: 1.5vh;
 }
 
 a:link {

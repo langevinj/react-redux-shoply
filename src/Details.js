@@ -10,7 +10,7 @@ function Details() {
 
     return (
         <div>
-            <ProductCard id={id} item={products[id]} details={true} showQuantity={true}/>
+            {products[id] ? <ProductCard id={id} item={products[id]} details={true} showQuantity={true}/> : <h2>Oops this product doesn't seem to be in our inventory!</h2>}
         </div>
     )
 }

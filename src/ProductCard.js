@@ -1,31 +1,22 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addToCart, removeFromCart } from './actions';
 import { Link } from 'react-router-dom'
 import QuantityAdjuster from './QuantityAdjuster'
 import './ProductCard.css'
-import useLocalStorage from './hooks'
 
 function ProductCard({ id, item, details=false}) {
     const dispatch = useDispatch();
-    const cart = useSelector(st => st.cart)
-    // const [storedCart, setStoredCart] = useLocalStorage("cart")
 
     const add = (evt) => {
         evt.preventDefault();
         dispatch(addToCart(evt.target.parentNode.id))
-        // updateStoredCart();
     }
 
     const remove = (evt) => {
         evt.preventDefault();
         dispatch(removeFromCart(evt.target.parentNode.id))
-        // updateStoredCart();
     }
-
-    // const updateStoredCart = () => {
-    //     setStoredCart(storedCart => cart)
-    // }
 
     return (
         <>

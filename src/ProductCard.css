@@ -36,3 +36,6 @@ a {
     background: rgb(24, 158, 211);
 }
 
+@media (hover: hover) and (pointer: fine) {
+  a:hover { background: rgb(24, 158, 211) }
+}

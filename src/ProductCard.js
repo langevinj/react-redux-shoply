@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import QuantityAdjuster from './QuantityAdjuster'
 import './ProductCard.css'
 
-function ProductCard({ id, item, details=false, showQuantity=false}) {
+function ProductCard({ id=null, item=null, details=false, showQuantity=false}) {
     const dispatch = useDispatch();
     
     const add = (evt) => {
@@ -16,6 +16,14 @@ function ProductCard({ id, item, details=false, showQuantity=false}) {
     const remove = (evt) => {
         evt.preventDefault();
         dispatch(removeFromCart(evt.target.parentNode.id))
+    }
+
+    if(!id || !item){
+        return (
+            <div>
+                <p className="text-danger">404</p>
+            </div>
+        )
     }
 
     return (

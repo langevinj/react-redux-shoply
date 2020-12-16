@@ -2,7 +2,12 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { addToCart, removeFromCart } from './actions';
 
-function QuantityAdjuster({ id }) {
+function QuantityAdjuster({ id=null }) {
+    if(!id){
+        return (
+            <></>
+        )
+    }
     const cart = useSelector(st => st.cart)
     const dispatch = useDispatch();
 

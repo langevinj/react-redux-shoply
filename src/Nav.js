@@ -1,11 +1,20 @@
-import React from 'react' 
+import React, { useEffect } from 'react' 
 import { NavLink } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { calculateTotal, totalItems } from './helpers'
 import './Nav.css'
+import useLocalStorage from './hooks'
 
 function Nav() {
     const cart = useSelector(st => st.cart)
+    const [storedCart, setStoredCart] = useLocalStorage("cart")
+
+    useEffect(() => {
+        function updateLocalCart(){
+            setStoredCart(storedCart => cart)
+        }
+        updateLocalCart()
+    }, [cart])
 
     return (
         <nav className="NavBar navbar">

@@ -7,7 +7,7 @@ import './ProductCard.css'
 
 function ProductCard({ id, item, details=false}) {
     const dispatch = useDispatch();
-
+    
     const add = (evt) => {
         evt.preventDefault();
         dispatch(addToCart(evt.target.parentNode.id))

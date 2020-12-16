@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { calculateTotal } from './helpers'
 import ProductCard from './ProductCard'
+import './Cart.css'
 
 function Cart() {
     const cart = useSelector(st => st.cart)
@@ -47,19 +48,40 @@ function Cart() {
                         <label htmlFor="discount-field" className="form-label">Enter a discount code:</label>
                         <input type="text" name="discount-field" value={formCode} id="discount-field" onChange={handleChange} className="form-control"></input>
                         {error ? <p className="text-danger">Invalid discount code.</p> : null}
-                        <button className="btn-primary rounded">Submit</button>
+                        <button className="btn-primary rounded discount-button">Submit</button>
                     </form>
                 </div>
                 <div className="col"></div>
             </div>
             <div className="row">
                 <div className="col"></div>
-                <div className="col">
-                    <h5>Order: {calculateTotal(cart, discountCode).preTax}</h5>
-                    <h5>Tax:       
-                        +{calculateTotal(cart, discountCode).tax}
-                    </h5>
-                    <h2>Order Total: {calculateTotal(cart, discountCode).total}</h2>
+                <div className="col order-total">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">Order:</th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                                <th scope="col">{calculateTotal(cart, discountCode).preTax}</th>
+                            </tr>
+                            <tr>
+                                <th scope="col">Tax: </th>
+                                <th scope="col"></th>
+                                <th scope="col"> +{calculateTotal(cart, discountCode).tax}</th>
+                            </tr>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">Total:</th>
+                                <th scope="col">{calculateTotal(cart, discountCode).total}</th>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
                 <div className="col"></div>
             </div>

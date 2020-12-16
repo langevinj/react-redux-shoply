@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import QuantityAdjuster from './QuantityAdjuster'
 import './ProductCard.css'
 
-function ProductCard({ id, item, details=false}) {
+function ProductCard({ id, item, details=false, showQuantity=false}) {
     const dispatch = useDispatch();
     
     const add = (evt) => {
@@ -25,6 +25,7 @@ function ProductCard({ id, item, details=false}) {
             <p className="product-name">{item.name}</p>
             <img src={item.image_url} className="product-img" alt={item.name}></img>
             <p className="product-price">${item.price}</p>
+            {showQuantity ? <p>In Stock:</p> : null}
             {details ? <p className="product-description">{item.description}</p> :  null}
             <button className="add-button btn-primary rounded" onClick={add}>Add to cart</button>
             <button className="remove-button btn-primary rounded" onClick={remove}>Remove from cart</button>

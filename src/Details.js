@@ -10,7 +10,7 @@ function Details() {
 
     return (
         <div>
-            <ProductCard id={id} item={products[id]} details={true}/>
+            <ProductCard id={id} item={products[id]} details={true} showQuantity={true}/>
         </div>
     )
 }

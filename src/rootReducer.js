@@ -4,6 +4,7 @@ const json_inventory = require('./data.json')
 const INITIAL_STATE = { cart: {}, inventory: json_inventory.products }
 
 function rootReducer(state = INITIAL_STATE, action) {
+    // uncomment the line below to view reducer running as actios are taken
     // console.log("reducer ran; state & action:", state, action);
 
     switch(action.type) {
@@ -28,7 +29,6 @@ function rootReducer(state = INITIAL_STATE, action) {
         
         case INITIALUPDATE:
             return { ...state, cart: action.payload }
-            //could add an else here to throw error when item not in cart
 
         default:
             return state;

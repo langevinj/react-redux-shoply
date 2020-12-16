@@ -1,9 +1,13 @@
 .item-count {
-    font-size: 2rem;
+    font-size: 3.5vh;
     margin: 0.5rem;
 }
 
 .cart-total {
-    font-size: 0.65em;
+    font-size: 2vh;
     border: 1px solid blue;
+}
+
+.fa-shopping-cart {
+    font-size: 3vh;
 }

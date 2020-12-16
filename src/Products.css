@@ -1,4 +1,12 @@
 ul {
     list-style: none;
-    float: left;
+    /* padding-left: 0; */
+    display: table-row;
+    /* float: left; */
+    /* padding-inline-start: 0px; */
+}
+
+.products {
+    /* display: inline-block; */
+    width: 100%;
 }
